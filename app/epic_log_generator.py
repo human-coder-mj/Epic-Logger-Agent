@@ -101,17 +101,10 @@ class EpicChangelogAgent:
 
         try:
             if self.use_api:
-
-                max_tokens = min(200, 100 + (drama_level * 10))
-                temperature = min(1.0, 0.5 + (drama_level * 0.05))
-
-
                 response = self.client.models.generate_content(
                     model=self.model,
                     config=types.GenerateContentConfig(
                         system_instruction=system_message,
-                        max_output_tokens=max_tokens,
-                        temperature=temperature,
                         ),
                     contents=f"Transform this software change into an epic {theme} tale: '{original_text}'"
                 )
