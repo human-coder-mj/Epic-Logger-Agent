@@ -9,7 +9,7 @@ from typing import Optional
 import click
 from dotenv import load_dotenv
 from colorama import init, Fore, Style
-from epic_log_generator import EpicChangelogAgent
+from .epic_log_generator import EpicChangelogAgent
 
 
 # Initialize colorama for Windows terminal colors
@@ -21,7 +21,7 @@ load_dotenv()
 def print_epic_banner():
     """Print the epic banner."""
     banner = f"""{Fore.YELLOW}╔══════════════════════════════════════════════════════════════╗
-║  ⚔️  EPIC CHANGELOG AGENT (Powered by Hugging Face) ⚔️         ║
+║  ⚔️  EPIC LOGGER AGENT (Powered by AI) ⚔️         ║
 ║  Transforming mundane updates into legendary tales...        ║
 ╚══════════════════════════════════════════════════════════════╝{Style.RESET_ALL}
 """
