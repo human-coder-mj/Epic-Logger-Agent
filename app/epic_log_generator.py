@@ -7,7 +7,8 @@ import os
 from typing import List, Optional
 from dotenv import load_dotenv
 from colorama import init, Fore, Style
-from huggingface_hub import InferenceClient
+from google import genai
+from google.genai import types
 
 init()
 
@@ -19,7 +20,7 @@ class EpicChangelogAgent:
 
     def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None):
         """Initialize the agent with Hugging Face API key."""
-        self.api_key = api_key or os.getenv("HUGGINGFACE_API_KEY")
+        self.api_key = api_key or os.getenv("GOOGLE_API_KEY")
         self.model = model or os.getenv("DEFAULT_MODEL")
 
         # Try different approaches for text generation
@@ -28,11 +29,9 @@ class EpicChangelogAgent:
 
         if self.api_key:
             try:
-                self.client = InferenceClient(
-                    provider="fireworks-ai",
-                    token=self.api_key
+                self.client = genai.Client(
+                    api_key=self.api_key
                 )
-                print(f"{Fore.CYAN}🤗 Using Hugging Face Inference API{Style.RESET_ALL}")
             except Exception as e:
                 print(f"{Fore.YELLOW}⚠️ API setup failed: {e}{Style.RESET_ALL}")
                 self.use_api = False
@@ -41,7 +40,7 @@ class EpicChangelogAgent:
 
         # Fallback to local transformers if API fails
         if not self.use_api:
-            raise ValueError("Hugging Face API key is required. Set HUGGINGFACE_API_KEY in environment or .env file, or install transformers.")
+            raise ValueError("GOOGLE_API_Key is required. Set GOOGLE_API_Key  in environment or .env file")
 
         # Dramatic themes and their characteristics
         self.themes = {
@@ -97,34 +96,40 @@ class EpicChangelogAgent:
         Include metaphors like: {theme_metaphors}
         {drama_instructions}
 
-        Keep responses to 10-15 words with an appropriate emoji. Be direct and dramatic."""
+        Keep responses to 7-10 words with an appropriate emoji. Be direct and dramatic."""
 
 
         try:
             if self.use_api:
-                messages = [
-                    {"role": "system", "content": system_message},
-                    {"role": "user", "content": f"Transform this software change into an epic {theme} tale: '{original_text}'"}
-                ]
-                
+
                 max_tokens = min(200, 100 + (drama_level * 10))
                 temperature = min(1.0, 0.5 + (drama_level * 0.05))
 
-                response = self.client.chat.completions.create(
-                    model="meta-llama/Llama-3.1-8B-Instruct",
-                    messages=messages,
-                    max_tokens = max_tokens,
-                    temperature = temperature,
-                    stop="reasoning_content"
+
+                response = self.client.models.generate_content(
+                    model=self.model,
+                    config=types.GenerateContentConfig(
+                        system_instruction=system_message,
+                        max_output_tokens=max_tokens,
+                        temperature=temperature,
+                        ),
+                    contents=f"Transform this software change into an epic {theme} tale: '{original_text}'"
                 )
+                
+                result = response.text
+                content = result.strip()
 
+                # Add emoji if not present
+                if not any(emoji in content for emoji in ['⚔️', '🏰', '🐉', '🚀', '💥', '⚡', '🎭']):
+                    emoji_map = {
+                        'medieval': '⚔️',
+                        'space': '🚀', 
+                        'superhero': '💥',
+                        'mythology': '⚡'
+                    }
+                    content = f"{emoji_map.get(theme, '🎭')} {content}"
 
-                if response is not None:
-                    content = response['choices'][0]['message']['content'].strip()
-
-                    return content
-                else:
-                    return "⚠️ No Response"
+                return content
 
             else:
                 return "🎭 Epic transformation unavailable - please check your setup"
