@@ -20,10 +20,11 @@ load_dotenv()
 
 def print_epic_banner():
     """Print the epic banner."""
-    banner = f"""{Fore.YELLOW}╔══════════════════════════════════════════════════════════════╗
-║  ⚔️  EPIC LOGGER AGENT (Powered by AI) ⚔️         ║
-║  Transforming mundane updates into legendary tales...        ║
-╚══════════════════════════════════════════════════════════════╝{Style.RESET_ALL}
+    banner = f"""{Fore.YELLOW}╔════════════════════════════════════════════════════════════╗
+║  ⚔️ EPIC LOGGER AGENT (Powered by AI) ⚔️                     ║
+║  Transforming mundane updates into legendary tales...      ║
+╚════════════════════════════════════════════════════════════╝
+    {Style.RESET_ALL}
 """
     print(banner)
 
