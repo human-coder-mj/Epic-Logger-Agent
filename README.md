@@ -11,6 +11,8 @@ An LLM-powered changelog writer that transforms mundane software updates into ep
 - 🔧 Configurable drama levels
 - 📦 Easy pip-style installation
 
+[![Watch the video](./assets/thumbnail.png)](./assets/demo.mp4)
+
 ## Installation
 
 ### Option 1: Install as Package (Recommended)
