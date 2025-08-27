@@ -1,4 +1,4 @@
-# Epic Changelog Agent 🏰⚔️
+# Epic Logger Agent 🏰⚔️
 
 An LLM-powered changelog writer that transforms mundane software updates into epic, theatrical narratives.
 
@@ -9,45 +9,96 @@ An LLM-powered changelog writer that transforms mundane software updates into ep
 - 🎨 Multiple theatrical styles and themes
 - 📝 CLI interface for easy integration
 - 🔧 Configurable drama levels
+- 📦 Easy pip-style installation
 
 ## Installation
 
-1. Clone this repository
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Set up your Hugging Face API key:
-   ```bash
-   cp .env.example .env
-   # Edit .env and add your HUGGINGFACE_API_KEY
-   ```
+### Option 1: Install as Package (Recommended)
+```bash
+# Clone the repository
+git clone <repository-url>
+cd Epic-Logger-Agent
+
+# Install the package
+pip install -e .
+```
+
+### Option 2: Manual Installation
+```bash
+# Clone this repository
+git clone <repository-url>
+cd Epic-Logger-Agent
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+## Setup
+
+Set up your Hugging Face API key:
+```bash
+# Create .env file with your API key
+echo "GOOGLE_API_KEY=your_api_key_here" > .env
+```
 
 ## Usage
 
-### Basic Usage
+### CLI Commands (After Package Installation)
+
+The package provides three convenient commands:
+
 ```bash
-python epic_changelog.py "Fixed minor bug in login form"
+# Primary command
+epiclog "Fixed minor bug in login form"
+
+# Alternative alias
+changelog "Fixed minor bug in login form"
 ```
 
-### Output Example
-**Input:** "Fixed minor bug in login form"
-**Output:** "🗡️ Vanquished a lurking menace that had corrupted the sacred login flow, restoring peace to the realm of user authentication!"
+### Command Options
 
-### Advanced Usage
 ```bash
 # Choose drama level (1-10)
-python epic_changelog.py "Added new feature" --drama-level 8
+epiclog "Added new feature" --drama-level 8
 
 # Select theme
-python epic_changelog.py "Updated dependencies" --theme medieval
+epiclog "Updated dependencies" --theme space
 
-# Choose different Hugging Face model
-python epic_changelog.py "Updated docs" --model "microsoft/DialoGPT-large"
+# Interactive mode
+epiclog --interactive
 
-# Process multiple entries
-python epic_changelog.py --file changelog_input.txt
+# Process file with multiple entries
+epiclog --file changelog_input.txt
+
+# Save output to file
+epiclog "Fixed bug" --output epic_changes.txt
 ```
+
+### Example Output
+- **Input:** "Fixed minor bug in login form"
+- **Output:** "🗡️ Vanquished a lurking menace that had corrupted the sacred login flow, restoring peace to the realm of user authentication!"
+
+### Manual Usage (Without Package Installation)
+```bash
+# With default drama level(7) and default theme(medieval)
+python -m app.main "Fixed minor bug in login form"
+
+# Choose drama level (1-10)
+python -m app.main "Added new feature" --drama-level 8
+
+# Select theme
+python -m app.main "Updated dependencies" --theme space
+
+# Interactive mode
+python -m app.main --interactive
+
+# Process file with multiple entries
+python -m app.main --file changelog_input.txt
+
+# Save output to file
+python -m app.main --output epic_changes.txt
+```
+
 
 ## Drama Levels
 - **1-3**: Mildly dramatic
@@ -65,18 +116,11 @@ python epic_changelog.py --file changelog_input.txt
 
 Create a `.env` file with:
 ```
-HUGGINGFACE_API_KEY=your_huggingface_api_key_here
+GOOGLE_API_KEY=your_google_api_key_here
 DEFAULT_DRAMA_LEVEL=7
 DEFAULT_THEME=medieval
-DEFAULT_MODEL=microsoft/DialoGPT-medium
+DEFAULT_MODEL=gemini-2.5-flash
 ```
-
-## Recommended Models
-
-- **microsoft/DialoGPT-medium**: Good balance of quality and speed
-- **microsoft/DialoGPT-large**: Higher quality responses
-- **facebook/blenderbot-400M-distill**: Fast and lightweight
-- **microsoft/DialoGPT-small**: Fastest option
 
 ## Development
 
@@ -84,7 +128,3 @@ Run tests:
 ```bash
 python -m pytest tests/
 ```
-
-## License
-
-MIT License - Transform your boring changelogs into epic tales!
