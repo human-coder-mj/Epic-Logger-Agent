@@ -1,0 +1,17 @@
+{
+    "name": "mythology",
+    "display_name": "Ancient Mythology",
+    "vocabulary": [
+        "decreed", "blessed", "cursed", "awakened", "ordained", 
+        "proclaimed", "divine", "immortal", "eternal", "mystical", 
+        "legendary", "prophetic", "sacred", "celestial"
+    ],
+    "metaphors": [
+        "god", "titan", "oracle", "temple", "lightning bolt", 
+        "golden fleece", "underworld", "pantheon", "divine artifact", 
+        "celestial realm", "ancient prophecy", "mythical beast"
+    ],
+    "tone": "mythological epic",
+    "emoji": "⚡",
+    "description": "Channel the power of ancient gods to describe your changes"
+}

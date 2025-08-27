@@ -1,0 +1,17 @@
+{
+    "name": "space",
+    "display_name": "Space Opera",
+    "vocabulary": [
+        "obliterated", "engineered", "navigated", "transmitted", "launched", 
+        "terraformed", "galaxy", "cosmic", "stellar", "quantum", 
+        "hyperspace", "orbital", "plasma", "fusion"
+    ],
+    "metaphors": [
+        "starship", "alien threat", "black hole", "wormhole", "space station", 
+        "nebula", "asteroid belt", "hyperdrive", "laser cannon", "mothership", 
+        "space colony", "quantum field"
+    ],
+    "tone": "galactic space opera",
+    "emoji": "🚀",
+    "description": "Launch your updates into epic intergalactic adventures"
+}

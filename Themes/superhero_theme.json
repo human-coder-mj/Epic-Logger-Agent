@@ -1,0 +1,17 @@
+{
+    "name": "superhero",
+    "display_name": "Superhero Adventure",
+    "vocabulary": [
+        "defeated", "empowered", "protected", "rescued", "unleashed", 
+        "transformed", "city", "ultimate", "mighty", "heroic", 
+        "super", "invincible", "legendary", "powered"
+    ],
+    "metaphors": [
+        "villain", "superpower", "secret identity", "fortress", "energy beam", 
+        "time rift", "dimensional portal", "crime wave", "superhero team", 
+        "cosmic threat", "power surge", "hero's journey"
+    ],
+    "tone": "superhero comic book adventure",
+    "emoji": "💥",
+    "description": "Transform code changes into heroic battles against bugs"
+}

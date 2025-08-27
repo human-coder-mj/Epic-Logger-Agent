@@ -1,0 +1,16 @@
+{
+    "name": "medieval",
+    "display_name": "Medieval Fantasy",
+    "vocabulary": [
+        "vanquished", "forged", "conquered", "wielded", "summoned", 
+        "banished", "realm", "sacred", "legendary", "ancient", 
+        "mystical", "enchanted", "divine", "blessed"
+    ],
+    "metaphors": [
+        "dragon", "knight", "sword", "castle", "quest", "prophecy", 
+        "dark magic", "holy grail", "enchanted", "kingdom", "wizard", "dungeon"
+    ],
+    "tone": "epic fantasy adventure",
+    "emoji": "⚔️",
+    "description": "Transform your code changes into legendary medieval quests"
+}

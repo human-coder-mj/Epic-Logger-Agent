@@ -1,0 +1,17 @@
+{
+    "name": "cyberpunk",
+    "display_name": "Cyberpunk Future",
+    "vocabulary": [
+        "hacked", "encrypted", "uploaded", "downloaded", "compiled", 
+        "executed", "networked", "digitized", "processed", "interfaced", 
+        "cybernetic", "neural", "virtual", "augmented"
+    ],
+    "metaphors": [
+        "cyberspace", "mainframe", "virus", "firewall", "neural network", 
+        "data stream", "digital ghost", "cyber matrix", "AI consciousness", 
+        "virtual reality", "hologram", "quantum processor"
+    ],
+    "tone": "futuristic cyberpunk thriller",
+    "emoji": "🤖",
+    "description": "Jack into the matrix and transform code changes into cyber adventures"
+}

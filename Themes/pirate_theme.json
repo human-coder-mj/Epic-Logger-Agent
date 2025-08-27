@@ -1,0 +1,17 @@
+{
+    "name": "pirate",
+    "display_name": "Pirate Adventure",
+    "vocabulary": [
+        "plundered", "sailed", "conquered", "navigated", "discovered", 
+        "battled", "treasured", "commandeered", "anchored", "raided", 
+        "captured", "hoisted", "charted", "explored"
+    ],
+    "metaphors": [
+        "ship", "treasure", "sea monster", "storm", "island", "compass", 
+        "cannon", "crew", "parrot", "map", "kraken", "pirate flag", 
+        "buried treasure", "lighthouse"
+    ],
+    "tone": "swashbuckling pirate adventure",
+    "emoji": "🏴‍☠️",
+    "description": "Ahoy! Transform your code changes into high-seas adventures"
+}
