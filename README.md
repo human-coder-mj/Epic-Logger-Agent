@@ -12,7 +12,7 @@ An LLM-powered changelog writer that transforms mundane software updates into ep
 - 📦 Easy pip-style installation
 - 🎨 Custom theme support with unlimited extensibility
 
-https://github.com/human-coder-mj/Epic-Logger-Agent/tree/main/assets/demo.mp4
+![Demo](./assets/demo.gif)
 
 ## Installation
 
