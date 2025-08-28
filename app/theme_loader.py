@@ -73,7 +73,6 @@ class ThemeLoader:
                     theme_data["_file_path"] = str(theme_file)
                     
                     self.themes[theme_name] = theme_data
-                    print(f"{Fore.GREEN}✅ Loaded {theme_type.lower()} theme: {theme_name}{Style.RESET_ALL}")
                     loaded_count += 1
                 else:
                     print(f"{Fore.YELLOW}⚠️ Invalid theme format in {theme_file.name} ({theme_type}){Style.RESET_ALL}")
